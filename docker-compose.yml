@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  nginx-spa:
+    image: tsangpo/nginx-spa
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        pull: 1
+    volumes:
+      - ./www:/www
+    ports:
+      - "8080:80"
